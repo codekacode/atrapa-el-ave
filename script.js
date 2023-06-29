@@ -37,6 +37,11 @@ function updateTimeDisplay() {
   timeComponent.textContent = timeLeft.toString();
 }
 
+function updateScoreDisplay() {
+  document.getElementById('score-pink').textContent = scorePink;
+  document.getElementById('score-blue').textContent = scoreBlue;
+}
+
 function handleClick(e) {
   if (e.target.classList.contains('bird-pink')) {
     scorePink++;
@@ -45,6 +50,7 @@ function handleClick(e) {
     scoreBlue++;
     e.target.classList.remove('bird-blue');
   }
+  updateScoreDisplay();
 }
 
 function putBirds() {
@@ -58,6 +64,10 @@ function putBirds() {
       }
     }
   });
+}
+
+function endGame() {
+  clearInterval(timeId);
 }
 
 restartComponent.addEventListener("click", startGame);
