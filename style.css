@@ -1,9 +1,9 @@
 .bird-pink {
-  background-image: url('/assets/aveRosa.png');
+  background-image: url('aveAzul.png');
   background-size: cover;
 }
 
 .bird-blue {
-  background-image: url('/assets/aveBlue.png');
+  background-image: url('aveAzul.png');
   background-size: cover;
 }

@@ -7,16 +7,37 @@ let scoreBlue = 0;
 let timeId = null;
 let timeLeft = 60;
 
+function resetGame() {
+  scorePink = 0;
+  scoreBlue = 0;
+  timeLeft = 60;
+
+   positions.forEach((position, index) => {
+     position.classList.remove('bird-pink', 'bird-blue');
+   });
+
+   if (timeId !== null) {
+     clearInterval(timeId);
+     timeId = null;
+   }
+}
+
 function startGame() {
   timeId = setInterval(update, 1000);
-  placeBirds();
+  putBirds();
 }
 
 function update() {
   timeLeft--;
+  putBirds();
+  updateTimeDisplay();
 }
 
-function placeBirds() {
+function updateTimeDisplay() {
+  timeComponent.textContent = timeLeft.toString();
+}
+
+function putBirds() {
   positions.forEach(position => {
     position.classList.remove('bird-pink', 'bird-blue');
     if (Math.random() < 0.33) {
