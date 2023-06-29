@@ -37,6 +37,16 @@ function updateTimeDisplay() {
   timeComponent.textContent = timeLeft.toString();
 }
 
+function handleClick(e) {
+  if (e.target.classList.contains('bird-pink')) {
+    scorePink++;
+    e.target.classList.remove('bird-pink');
+  } else if (e.target.classList.contains('bird-blue')) {
+    scoreBlue++;
+    e.target.classList.remove('bird-blue');
+  }
+}
+
 function putBirds() {
   positions.forEach(position => {
     position.classList.remove('bird-pink', 'bird-blue');
