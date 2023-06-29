@@ -49,3 +49,10 @@ function putBirds() {
     }
   });
 }
+
+restartComponent.addEventListener("click", startGame);
+positions.forEach((position) => {
+  position.addEventListener("click", handleClick);
+});
+
+startGame();
